@@ -5,7 +5,7 @@ import { respondWithError, respondWithJSON } from "./json.js";
 import { createUser, getUser } from "../db/queries/users.js";
 import { User } from "../db/schema.js";
 
-/*export async function handlerUsersCreate(req: Request, res: Response) {
+export async function handlerUsersCreate(req: Request, res: Response) {
   try {
     const { name } = req.body;
     const apiKey = generateRandomSHA256Hash();
@@ -28,7 +28,7 @@ import { User } from "../db/schema.js";
     respondWithError(res, 500, "Couldn't create user", err);
   }
 }
-*/
+
 export async function handlerUsersGet(req: Request, res: Response, user: User) {
   respondWithJSON(res, 200, user);
 }
